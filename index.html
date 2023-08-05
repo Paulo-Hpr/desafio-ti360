@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <title> Formulário de Cadastro  - Desafio TI360</title>
+</head>
+<body>
+    <form action="#" class="form-register">
+        <h1>Formulário de cadastro</h1>
+        <div class="form-container">
+            <div class="input-container">
+                <label class="input-label-register" for="userName" >Nome:</label>
+                <input class="input-register"  type="text" id="userName" name="Nome" placeholder="Seu Nome">
+            </div>
+
+            <div class="input-container">
+                <label class="input-label-register" for="email">E-mail:</label>
+                <input class="input-register"  type="email" id="email" placeholder="user@email.com">
+            </div>
+
+            <div class="input-container">
+                <label class="input-label-register" for="telefone">Telefone:</label>
+                <div class="input-telefone">
+                    <input type="tel" maxlength="2" class="input-register ipt-numberDDD" placeholder="DDD">
+                    <input class="input-register ipt-numberTel" type="tel" id="telefone" placeholder="Telefone">
+                </div>
+            </div>
+            <div class="container-endereco">
+                <p>Endereço</p>
+                
+                <div class="input-container">
+                    <label class="input-label-register" for="rua">Rua:</label>
+                    <input class="input-register"  type="text" id="rua" placeholder="Av.Dr Silva...">
+                </div>
+                <div class="ipt-endereco">
+                    <div class="input-container number-justfy">
+                        <label class="input-label-register" for="numero">Número:</label>
+                        <input class="input-register ipt-endereco-number"  type="number" id="numero" >
+                    </div>
+                    <div class="input-container">
+                        <label class="input-label-register" for="complemento">Complemento:</label>
+                        <input class="input-register"  type="text" id="complemento" placeholder="Bloco,quadra,referência...">
+                    </div>
+                </div>
+                <div class="ipt-endereco">
+                    <div class="input-container ipt-cidade">
+                        <label class="input-label-register" for="cidade">Cidade:</label>
+                        <input class="input-register"  type="text" id="cidade" placeholder="">
+                    </div>
+                        <select class="slct-uf">
+                            <option value="">UF</option>
+                            <option value="">AM</option>
+                            <option value="">SP</option>
+                            <option value="">SE</option>
+                            <option value="">BA</option>
+                        </select>
+                </div>
+                <div class="input-container">
+                    <label class="input-label-register" for="cep">CEP:</label>
+                    <input class="input-register"  type="tel" id="cep" placeholder="99999-999">
+                </div>
+            </div>
+            
+                <div class="container-button">
+                    <input type="button" value="Enviar" class="btn-send">
+                </div>
+            
+        </div>
+    </form>
+</body>
+</html>
