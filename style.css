@@ -51,7 +51,7 @@ body{
     display: block;
     margin-bottom: 10px;
 }
-.input-register{
+.input-register, .input-register-complemento{
     padding-left: 20px;
     margin-bottom: 10px;
     font-size: 14px;
@@ -72,6 +72,14 @@ body{
 
 .ipt-numberTel{
     width: calc(100% - 100px);
+}
+.alert{
+    color: #f73333;
+    display: none;
+}
+
+.alertAtivo{
+    display:block ;
 }
 .number-justfy{
     margin-right: 10px;
@@ -118,4 +126,8 @@ body{
     border: 1px solid #04ffa3;
     border-radius: 10px ;
     box-shadow: 0px 1px 2px 0px #0000007d;
+}
+.btn-send:disabled{
+    background-color: #9b9e9d;
+    cursor: not-allowed;
 }

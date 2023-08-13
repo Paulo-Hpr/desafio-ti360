@@ -21,18 +21,26 @@
             <div class="input-container">
                 <label class="input-label-register" for="email">E-mail:</label>
                 <input class="input-register"  type="email" id="email" placeholder="user@email.com">
+                <span id="invalidEmail" class="alert"></span>
             </div>
 
             <div class="input-container">
                 <label class="input-label-register" for="telefone">Telefone:</label>
                 <div class="input-telefone">
-                    <input type="tel" maxlength="2" class="input-register ipt-numberDDD" placeholder="DDD">
-                    <input class="input-register ipt-numberTel" type="tel" id="telefone" placeholder="Telefone">
+                    <input type="tel" class="input-register ipt-numberDDD" id="ddd" placeholder="DDD">
+                    <input class="input-register ipt-numberTel" type="tel" id="telefone" placeholder="Telefone" >
                 </div>
+                <span class="alert" id="alertTel">Informe um telefone válido!</span>
             </div>
             <div class="container-endereco">
                 <p>Endereço</p>
                 
+                <div class="input-container">
+                    <label class="input-label-register" for="cep">CEP:</label>
+                    <input class="input-register"  type="tel" id="cep" placeholder="99999-999">
+                    <span class="alert" id="alertCep">CEP inválido!</span>
+                </div>
+
                 <div class="input-container">
                     <label class="input-label-register" for="rua">Rua:</label>
                     <input class="input-register"  type="text" id="rua" placeholder="Av.Dr Silva...">
@@ -44,7 +52,7 @@
                     </div>
                     <div class="input-container">
                         <label class="input-label-register" for="complemento">Complemento:</label>
-                        <input class="input-register"  type="text" id="complemento" placeholder="Bloco,quadra,referência...">
+                        <input class="input-register-complemento"  type="text" id="complemento" placeholder="Bloco,quadra,referência...">
                     </div>
                 </div>
                 <div class="ipt-endereco">
@@ -60,17 +68,15 @@
                             <option value="">BA</option>
                         </select>
                 </div>
-                <div class="input-container">
-                    <label class="input-label-register" for="cep">CEP:</label>
-                    <input class="input-register"  type="tel" id="cep" placeholder="99999-999">
-                </div>
+                
             </div>
             
                 <div class="container-button">
-                    <input type="button" value="Enviar" class="btn-send">
+                    <input type="button" value="Enviar" class="btn-send" id="btn-send">
                 </div>
             
         </div>
     </form>
+    <script src="form.js"></script>
 </body>
 </html>
