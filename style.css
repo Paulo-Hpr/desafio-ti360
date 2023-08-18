@@ -22,7 +22,26 @@ time, mark, audio, video {
 
 
 body{
-    background-color:#F8FAFB ;
+    background-color:#c1ccd4 ;
+}
+.container-data-recovery{
+    margin: 10px auto;
+    max-width: 480px;
+    padding: 15px;
+    border: 3px solid #ffffff;
+    background: #44ac67;
+    color: #025226;
+    border-radius: 10px;
+    text-align: center;
+}
+.cardData{
+    color: #020202;
+
+    text-align: initial;
+    display: block;
+}
+.cardData label{
+    font-weight: bold;
 }
 .form-register{
     text-align: center;
@@ -32,7 +51,7 @@ body{
     margin: 30px auto;
     min-width: 350px;
     background: #fff;
-    box-shadow: 3px 3px 6px #f3f3f3;
+    box-shadow: 3px 3px 6px #afafafb3;
     border-radius: 15px;
 }
 .form-container{
@@ -43,7 +62,6 @@ body{
 .input-container{
     width: 100%;
     margin-bottom: 20px;
-    /* border: 1px solid red; */
 
 
 }
@@ -77,10 +95,19 @@ body{
     color: #f73333;
     display: none;
 }
-
 .alertAtivo{
     display:block ;
 }
+.error, .error:focus-visible{
+    outline-color: #f73333;
+    border:1px solid #f73333;
+}
+.successful,.successful:focus-visible{
+    outline-color: #2ebb64;
+    border:2px solid #2ebb64;
+
+}
+
 .number-justfy{
     margin-right: 10px;
     width: 150px;
@@ -128,6 +155,7 @@ body{
     box-shadow: 0px 1px 2px 0px #0000007d;
 }
 .btn-send:disabled{
+    border: 1px solid #272727;
     background-color: #9b9e9d;
     cursor: not-allowed;
 }

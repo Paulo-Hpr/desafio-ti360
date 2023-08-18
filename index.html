@@ -4,41 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <title> Formulário de Cadastro  - Desafio TI360</title>
 </head>
 <body>
+        <div id="cardRecoveryData" class="container-data-recovery">
+
+        </div>
+
     <form action="#" class="form-register">
         <h1>Formulário de cadastro</h1>
         <div class="form-container">
             <div class="input-container">
                 <label class="input-label-register" for="userName" >Nome:</label>
                 <input class="input-register"  type="text" id="userName" name="Nome" placeholder="Seu Nome">
+                <span id="msgInvalid-name" class="alert"></span>
+
             </div>
 
             <div class="input-container">
                 <label class="input-label-register" for="email">E-mail:</label>
-                <input class="input-register"  type="email" id="email" placeholder="user@email.com">
-                <span id="invalidEmail" class="alert"></span>
+                <input class="input-register" name="email" type="email" id="email" placeholder="user@email.com">
+                <span id="msgInvalid-Email" class="alert"></span>
             </div>
 
             <div class="input-container">
+
                 <label class="input-label-register" for="telefone">Telefone:</label>
                 <div class="input-telefone">
-                    <input type="tel" class="input-register ipt-numberDDD" id="ddd" placeholder="DDD">
-                    <input class="input-register ipt-numberTel" type="tel" id="telefone" placeholder="Telefone" >
+                    <input type="tel" class="input-register ipt-numberDDD" id="ddd" placeholder="DDD" name="dddPhone">
+                    <input class="input-register ipt-numberTel" type="tel" id="telefone" placeholder="Telefone"  name="phone">
                 </div>
-                <span class="alert" id="alertTel">Informe um telefone válido!</span>
+                <span class="alert" id="msgInvalid-phone"></span>
+
             </div>
+
+
+
             <div class="container-endereco">
                 <p>Endereço</p>
                 
                 <div class="input-container">
                     <label class="input-label-register" for="cep">CEP:</label>
-                    <input class="input-register"  type="tel" id="cep" placeholder="99999-999">
-                    <span class="alert" id="alertCep">CEP inválido!</span>
+                    <input class="input-register"  type="tel" id="cep" placeholder="99999-999" name="cep">
+                    <span class="alert" id="msgInvalid-cep"></span>
                 </div>
 
                 <div class="input-container">
@@ -48,11 +60,12 @@
                 <div class="ipt-endereco">
                     <div class="input-container number-justfy">
                         <label class="input-label-register" for="numero">Número:</label>
-                        <input class="input-register ipt-endereco-number"  type="number" id="numero" >
+                        <input class="input-register ipt-endereco-number"  type="number" id="numbResidencia" name="casaNumber" >
+                        <span class="alert" id="msgInvalid-number"></span>
                     </div>
                     <div class="input-container">
                         <label class="input-label-register" for="complemento">Complemento:</label>
-                        <input class="input-register-complemento"  type="text" id="complemento" placeholder="Bloco,quadra,referência...">
+                        <input class="input-register-complemento"  type="text" id="complementoEndereco" placeholder="Bloco,quadra,referência...">
                     </div>
                 </div>
                 <div class="ipt-endereco">
@@ -60,14 +73,7 @@
                         <label class="input-label-register" for="cidade">Cidade:</label>
                         <input class="input-register"  type="text" id="cidade" placeholder="">
                     </div>
-                        <select class="slct-uf">
-                            <option value="">UF</option>
-                            <option value="">AM</option>
-                            <option value="">SP</option>
-                            <option value="">SE</option>
-                            <option value="">BA</option>
-                        </select>
-                </div>
+                        <input class="slct-uf" placeholder="UF" id="uf">
                 
             </div>
             
@@ -78,5 +84,6 @@
         </div>
     </form>
     <script src="form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.all.min.js" ></script>
 </body>
 </html>
