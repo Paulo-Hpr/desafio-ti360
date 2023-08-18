@@ -25,6 +25,7 @@ body{
     background-color:#c1ccd4 ;
 }
 .container-data-recovery{
+    display: none;
     margin: 10px auto;
     max-width: 480px;
     padding: 15px;

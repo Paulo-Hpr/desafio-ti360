@@ -1,6 +1,7 @@
 const recoveryUser = JSON.parse(localStorage.getItem('user'))
 let cardRecoveryData = document.getElementById("cardRecoveryData")
 if (localStorage.user) {
+    cardRecoveryData.classList.toggle("alertAtivo")
     
     cardRecoveryData.innerHTML += 
 
@@ -37,7 +38,9 @@ let msgInvalidCep = document.getElementById('msgInvalid-cep')
 let msgInvalidnumber = document.getElementById('msgInvalid-number')
 let inputRegisters = [userName,email,telDDD,telContato,numbercep,numbResidencia];
 
-
+telDDD.setAttribute('maxlength',2)
+telContato.setAttribute('maxlength',10)
+numbercep.setAttribute('maxlength',8)
 
 
 
@@ -104,7 +107,7 @@ email.addEventListener('input',(e)=>{
 
 telDDD.addEventListener('input',(e)=>{
     telDDD.value=   telDDD.value.replace(/\D/g,'')
-    const regex = /(\d{2})$/
+    const regex = /(^\d{2})$/
     validationInputs(telDDD, regex.test(telDDD.value) )
 
 })
