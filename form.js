@@ -1,22 +1,42 @@
 const recoveryUser = JSON.parse(localStorage.getItem('user'))
 let cardRecoveryData = document.getElementById("cardRecoveryData")
+let userCard = document.getElementById("userCard")
 if (localStorage.user) {
-    cardRecoveryData.classList.toggle("alertAtivo")
-    
-    cardRecoveryData.innerHTML += 
+    userCard.classList.toggle("alertAtivo")
+   const list = document.createElement("ul")
+   list.classList.add('cardListData')
+   const listItenNameUser = document.createElement("li")
+   const listItenEmail = document.createElement("li")
+   const listItenPhone = document.createElement("li")
+   const listItenCEP = document.createElement("li")
+   const listItenCity = document.createElement("li")
+   const listItenUF = document.createElement("li")
+   const listItenStreet = document.createElement("li")
+   const listItenNumber = document.createElement("li")
+   const listItencomplement = document.createElement("li")
 
-    `   <h1>Usuário cadastrado Anteriormente</h1>
-       <span class = "cardData"><label> Nome: </label> ${recoveryUser.Nome}</span>
-        <span class = "cardData"><label> E-mail: </label> ${recoveryUser.Email}</span>
-        <span class = "cardData"><label> Tel: </label> ${recoveryUser.Telefone}</span>
-        <span class = "cardData"><label> CEP: </label> ${recoveryUser.Cep}</span>
-        <span class = "cardData"><label> Cidade: </label> ${recoveryUser.Cidade}</span>
-        <span class = "cardData"><label> UF: </label> ${recoveryUser.Uf}</span>
-        <span class = "cardData"><label> Rua: </label> ${recoveryUser.Rua}</span>
-        <span class = "cardData"><label> Numero: </label> ${recoveryUser.numero}</span>
-        <span class = "cardData"><label> complemento: </label> ${recoveryUser.complemento}</span>
-        
-    `
+   listItenNameUser.textContent = `Nome: ${recoveryUser.Nome}`
+   listItenEmail.textContent = `E-mail: ${recoveryUser.Email}`
+   listItenPhone.textContent = `Telefone: ${recoveryUser.Telefone}`
+   listItenCEP.textContent = `CEP: ${recoveryUser.Cep}`
+   listItenCity.textContent = `Cidade: ${recoveryUser.Cidade}`
+   listItenUF.textContent = `Uf: ${recoveryUser.Uf}`
+   listItenStreet.textContent = `Rua: ${recoveryUser.Rua}`
+   listItenNumber.textContent = `Numero: ${recoveryUser.numero}`
+   listItencomplement.textContent = `complemento: ${recoveryUser.complemento}`
+
+
+list.appendChild(listItenNameUser)
+list.appendChild(listItenEmail)
+list.appendChild(listItenPhone)
+list.appendChild(listItenCEP)
+list.appendChild(listItenCity)
+list.appendChild(listItenUF)
+list.appendChild(listItenStreet)
+list.appendChild(listItenNumber)
+list.appendChild(listItencomplement)
+cardRecoveryData.appendChild(list)
+
 }
 
 
@@ -24,22 +44,22 @@ let userName= document.getElementById('userName')
 let email= document.getElementById('email')
 const btnSend = document.getElementById('btn-send')
 let telDDD = document.getElementById('ddd')
-let telContato = document.getElementById('telefone')
+let userPhone = document.getElementById('userPhone')
 let numbercep = document.getElementById('cep')
-let rua = document.getElementById('rua')
-let cidade = document.getElementById('cidade')
+let street = document.getElementById('street')
+let city = document.getElementById('city')
 let uf = document.getElementById('uf')
-let numbResidencia = document.getElementById('numbResidencia')
-let complementoEndereco = document.getElementById('complementoEndereco')
+let numbResidence = document.getElementById('numbResidence')
+let complementAddress = document.getElementById('complementAddress')
 let msgInvalidName = document.getElementById('msgInvalid-name')
 let msgInvalidEmail = document.getElementById('msgInvalid-Email')
 let msgInvalidPhone = document.getElementById('msgInvalid-phone')
 let msgInvalidCep = document.getElementById('msgInvalid-cep')
 let msgInvalidnumber = document.getElementById('msgInvalid-number')
-let inputRegisters = [userName,email,telDDD,telContato,numbercep,numbResidencia];
+let inputRegisters = [userName,email,telDDD,userPhone,numbercep];
 
 telDDD.setAttribute('maxlength',2)
-telContato.setAttribute('maxlength',10)
+userPhone.setAttribute('maxlength',10)
 numbercep.setAttribute('maxlength',8)
 
 
@@ -47,8 +67,8 @@ numbercep.setAttribute('maxlength',8)
 
 
 btnSend.disabled=true;
-cidade.disabled=true
-rua.disabled=true
+city.disabled=true
+street.disabled=true
 uf.disabled=true
 
 
@@ -63,19 +83,19 @@ function validationInputs (ipt, status){
           
      switch (ipt.name) {
          case "Nome":
-             msgInvalidName.innerText='Campo obrigatório'
+             msgInvalidName.textContent='Campo obrigatório'
              msgInvalidName.classList.toggle("alertAtivo",!status)
              break;
          case "email":
-             msgInvalidEmail.innerText='Informe um E-mail válido'
+             msgInvalidEmail.textContent='Informe um E-mail válido'
              msgInvalidEmail.classList.toggle("alertAtivo",!status)
              break;
          case "dddPhone":
-            msgInvalidPhone.innerText='DDD inválido!'
+            msgInvalidPhone.textContent='DDD inválido!'
             msgInvalidPhone.classList.toggle("alertAtivo",!status)
              break;
          case "phone":
-            msgInvalidPhone.innerText='Telefone inválido!'
+            msgInvalidPhone.textContent='Telefone inválido!'
             msgInvalidPhone.classList.toggle("alertAtivo",!status)
              break;
          case "cep":
@@ -112,14 +132,14 @@ telDDD.addEventListener('input',(e)=>{
 
 })
 
-telContato.addEventListener('input',(e)=>{
-    telContato.value= telContato.value.replace(/\D/g,'')
-    let telValid = /^\d{8,9}$/.test(telContato.value)
+userPhone.addEventListener('input',(e)=>{
+    userPhone.value= userPhone.value.replace(/\D/g,'')
+    let telValid = /^\d{8,9}$/.test(userPhone.value)
     if (telValid) {
-          telContato.value = telContato.value.replace(/(\d)(\d{4})$/, "$1-$2")
+          userPhone.value = userPhone.value.replace(/(\d)(\d{4})$/, "$1-$2")
     }
 
-    validationInputs(telContato,telValid)
+    validationInputs(userPhone,telValid)
 
 })
 
@@ -136,9 +156,9 @@ numbercep.addEventListener('input',(e)=>{
     validationInputs(numbercep,cepValid)
 })
 
-numbResidencia.addEventListener('input',()=>{
-    validationInputs(numbResidencia,numbResidencia.value.trim() !== '')
-})
+// numbResidence.addEventListener('input',()=>{
+//     validationInputs(numbResidence,numbResidence.value.trim() !== '')
+// })
 
 
 function searchCep(cepNumber){
@@ -149,27 +169,21 @@ function searchCep(cepNumber){
                     
     })
     .then(Response => {
-        return Response.json()})
-    .then(jsonbBodyceps =>{
-        if (jsonbBodyceps.type === 'service_error') {
-            msgInvalidCep.innerText='Cep Inexistente!'
-            msgInvalidCep.classList.toggle("alertAtivo")
-
-        }else{
+        if (Response.ok) {
+            return Response.json()
+        } else { 
+            throw new Error('Erro na requisição')
+        }})
+    .then(jsonbBodyceps => {
             numbercep.disabled = true
-            cidade.value = jsonbBodyceps.city
-            rua.value = jsonbBodyceps.street
-            uf.value = jsonbBodyceps.state
-
-        }
-        
-        
-
-    
+            city.value = jsonbBodyceps.city
+            street.value = jsonbBodyceps.street
+            uf.value = jsonbBodyceps.state    
     })
     .catch((error) => {
-  
-        console.error("error: ", error)
+            msgInvalidCep.innerText='Cep Inexistente!'
+            msgInvalidCep.classList.toggle("alertAtivo")
+            console.error("error: ", error)
     })
 
 }
@@ -180,13 +194,13 @@ btnSend.addEventListener('click', async()=>{
     const userData = {
         Nome:userName.value,
         Email:email.value,
-        Telefone:`(${telDDD.value}) ${telContato.value}`,
+        Telefone:`(${telDDD.value}) ${userPhone.value}`,
         Cep:numbercep.value,
-        Rua:rua.value,
-        Cidade:cidade.value,
+        Rua:street.value,
+        Cidade:city.value,
         Uf: uf.value,
-        complemento: complementoEndereco.value,
-        numero: numbResidencia.value
+        complemento: complementAddress.value != '' ? complementAddress.value : 'Não informado',
+        numero: numbResidence.value != '' ?  numbResidence.value : 'N/S' 
     }
 
     localStorage.setItem("user",JSON.stringify(userData));

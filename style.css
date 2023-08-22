@@ -24,26 +24,64 @@ time, mark, audio, video {
 body{
     background-color:#c1ccd4 ;
 }
-.container-data-recovery{
-    display: none;
+.userCard{
     margin: 10px auto;
     max-width: 480px;
-    padding: 15px;
-    border: 3px solid #ffffff;
-    background: #44ac67;
+    background-color:#43D685 ;
+    border: 5px solid #43D685;
     color: #025226;
     border-radius: 10px;
     text-align: center;
 }
-.cardData{
-    color: #020202;
-
+.container-data-recovery{
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+.cardListData{
+    color: #072A30;
+    list-style: none;
     text-align: initial;
-    display: block;
-}
-.cardData label{
+    /* margin-top: 15px; */
+    /* background-color: #ffffff88; */
+    text-transform: uppercase;
     font-weight: bold;
+    font-size: 14px;
+    width: 100%;
+
 }
+.cardListData li{
+    background-color: #43d68542;
+    margin-top: 5px;
+    padding: 3px;
+}
+.titleCard{
+    color: #072A30;
+
+    height: 40px;
+    padding: 5px;
+    background-color: #43D685;
+    /* background-color: #fff; */
+}
+.container-iconUser{
+    background-color: #43D685;
+    /* background-color: #fff; */
+    border-radius: 10px;
+    margin-right: 5px;
+    width: 30%;
+    /* border: 1px solid red; */
+}
+.iconUser{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 50% 50%;
+
+}
+
 .form-register{
     text-align: center;
     width: 100%;
@@ -70,7 +108,7 @@ body{
     display: block;
     margin-bottom: 10px;
 }
-.input-register, .input-register-complemento{
+.input-register, .input-register-complement{
     padding-left: 20px;
     margin-bottom: 10px;
     font-size: 14px;
@@ -79,7 +117,7 @@ body{
     display: inline-block;
     box-sizing: border-box;
 }
-.input-telefone{
+.input-userPhone{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -128,11 +166,11 @@ body{
     align-items: center;
     justify-content: space-between;
 }
-.ipt-endereco-number{
+.ipt-numbResidence{
     width: 80px;
 
 }
-.ipt-cidade{
+.ipt-city{
     width: calc(100% - 100px);
 }
 .slct-uf{

@@ -11,8 +11,17 @@
     <title> Formulário de Cadastro  - Desafio TI360</title>
 </head>
 <body>
-        <div id="cardRecoveryData" class="container-data-recovery" >
-
+        <div class="userCard" id="userCard">
+            <div class="titleCard"> 
+                <h1>Usuário cadastrado Anteriormente</h1>
+            </div>
+            <div id="cardRecoveryData" class="container-data-recovery">
+                <div class="container-iconUser">
+                    
+                        <img src="./imgs/perfil2.png" alt=" Perfil ícones criados por Wahyu Adam - Flaticon" srcset="" class="iconUser">
+                  
+                </div>
+            </div>
         </div>
 
     <form action="#" class="form-register">
@@ -33,10 +42,10 @@
 
             <div class="input-container">
 
-                <label class="input-label-register" for="telefone">Telefone:</label>
-                <div class="input-telefone">
+                <label class="input-label-register" for="userPhone">Telefone:</label>
+                <div class="input-userPhone">
                     <input type="tel" class="input-register ipt-numberDDD" id="ddd" placeholder="DDD" name="dddPhone">
-                    <input class="input-register ipt-numberTel" type="tel" id="telefone" placeholder="Telefone"  name="phone">
+                    <input class="input-register ipt-numberTel" type="tel" id="userPhone" placeholder="Telefone"  name="phone">
                 </div>
                 <span class="alert" id="msgInvalid-phone"></span>
 
@@ -54,24 +63,24 @@
                 </div>
 
                 <div class="input-container">
-                    <label class="input-label-register" for="rua">Rua:</label>
-                    <input class="input-register"  type="text" id="rua" placeholder="Av.Dr Silva...">
+                    <label class="input-label-register" for="street">Rua:</label>
+                    <input class="input-register"  type="text" id="street" placeholder="Av.Dr Silva...">
                 </div>
                 <div class="ipt-endereco">
                     <div class="input-container number-justfy">
-                        <label class="input-label-register" for="numero">Número:</label>
-                        <input class="input-register ipt-endereco-number"  type="number" id="numbResidencia" name="casaNumber" >
+                        <label class="input-label-register" for="numbResidence">Número:</label>
+                        <input class="input-register ipt-numbResidence"  type="number" id="numbResidence" name="casaNumber" >
                         <span class="alert" id="msgInvalid-number"></span>
                     </div>
                     <div class="input-container">
-                        <label class="input-label-register" for="complemento">Complemento:</label>
-                        <input class="input-register-complemento"  type="text" id="complementoEndereco" placeholder="Bloco,quadra,referência...">
+                        <label class="input-label-register" for="complementAddress">Complemento:</label>
+                        <input class="input-register-complement"  type="text" id="complementAddress" placeholder="Bloco,quadra,referência...">
                     </div>
                 </div>
                 <div class="ipt-endereco">
-                    <div class="input-container ipt-cidade">
-                        <label class="input-label-register" for="cidade">Cidade:</label>
-                        <input class="input-register"  type="text" id="cidade" placeholder="">
+                    <div class="input-container ipt-city">
+                        <label class="input-label-register" for="city">Cidade:</label>
+                        <input class="input-register"  type="text" id="city" placeholder="">
                     </div>
                         <input class="slct-uf" placeholder="UF" id="uf">
                 
